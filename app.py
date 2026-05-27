@@ -7,6 +7,9 @@ load_dotenv()
 app = Flask(__name__)
 
 def get_db():
+    @app.route('/')
+def index():
+    return jsonify({'status': 'ok', 'msg': 'API CulturaTur no ar!'})
     return pymysql.connect(
         host=os.getenv('MYSQL_HOST'),
         user=os.getenv('MYSQL_USER'),
@@ -58,5 +61,8 @@ def excluir(id):
     db.close()
     return jsonify({'msg': 'Excluído!'})
 
+@app.route('/')
+def index():
+    return jsonify({'status': 'ok', 'msg': 'API CulturaTur funcionando!'})
 if __name__ == '__main__':
     app.run(debug=True)
