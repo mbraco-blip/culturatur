@@ -78,11 +78,14 @@ PORTAL = """<!DOCTYPE html>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Raleway',sans-serif;background:#f4f4f4;color:#1b1b1b;font-size:16px}
+body{font-family:'Raleway',sans-serif;background:#f4f4f4;color:#1b1b1b;font-size:16px;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
 img{max-width:100%}
 ul{list-style:none}
 button{cursor:pointer;font-family:'Raleway',sans-serif}
+
+/* ── CONTAINER FLUID ── */
+.wrap{width:100%;padding-left:clamp(.75rem,3vw,2.5rem);padding-right:clamp(.75rem,3vw,2.5rem)}
 
 /* ── ACESSIBILIDADE ── */
 .skip-links{position:absolute;top:-999px;left:0;z-index:9999}
@@ -91,7 +94,7 @@ button{cursor:pointer;font-family:'Raleway',sans-serif}
 
 /* ── BARRA GOVBR ── */
 .govbr-bar{background:#071d41;height:40px;display:flex;align-items:center}
-.govbr-bar-inner{max-width:1200px;margin:0 auto;width:100%;padding:0 1rem;display:flex;align-items:center;justify-content:space-between}
+.govbr-bar .wrap{display:flex;align-items:center;justify-content:space-between}
 .govbr-logo{display:flex;align-items:center;gap:10px}
 .govbr-badge{background:#fff;color:#071d41;font-weight:700;font-size:12px;padding:3px 8px;border-radius:2px;letter-spacing:.5px}
 .govbr-bar-links{display:flex;gap:1.5rem}
@@ -100,24 +103,24 @@ button{cursor:pointer;font-family:'Raleway',sans-serif}
 
 /* ── HEADER ── */
 .site-header{background:#fff;border-bottom:3px solid #1351b4}
-.site-header-inner{max-width:1200px;margin:0 auto;padding:.8rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.site-header .wrap{padding-top:.8rem;padding-bottom:.8rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .brand{display:flex;align-items:center;gap:14px}
 .brand-icon{width:52px;height:52px;background:#1351b4;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:26px;flex-shrink:0}
 .brand-text strong{display:block;font-size:1.1rem;color:#1351b4;font-weight:700;line-height:1.2}
 .brand-text span{font-size:.8rem;color:#555;font-weight:500}
-.header-right{display:flex;align-items:center;gap:12px}
+.header-right{display:flex;align-items:center;gap:12px;flex-shrink:0}
 .header-search{display:flex;border:1.5px solid #888;border-radius:100px;overflow:hidden;height:38px}
-.header-search input{padding:0 14px;border:none;font-size:.9rem;width:240px;outline:none;font-family:'Raleway',sans-serif;background:transparent}
+.header-search input{padding:0 14px;border:none;font-size:.9rem;width:200px;outline:none;font-family:'Raleway',sans-serif;background:transparent}
 .header-search button{background:#1351b4;color:#fff;border:none;padding:0 14px;font-size:14px}
 .header-search button:hover{background:#0c3d8a}
-.btn-acessar{background:#1351b4;color:#fff;border:none;padding:8px 16px;border-radius:100px;font-size:.82rem;font-weight:600;display:flex;align-items:center;gap:6px}
+.btn-acessar{background:#1351b4;color:#fff;border:none;padding:8px 16px;border-radius:100px;font-size:.82rem;font-weight:600;white-space:nowrap}
 .btn-acessar:hover{background:#0c3d8a}
 
 /* ── NAVBAR ── */
 .navbar{background:#1351b4;position:relative}
-.navbar-inner{max-width:1200px;margin:0 auto;padding:0 1rem;display:flex;align-items:stretch}
+.navbar .wrap{display:flex;align-items:stretch;padding-top:0;padding-bottom:0}
 .nav-item{position:relative}
-.nav-item>a,.nav-item>button{color:#fff;font-size:.85rem;font-weight:600;padding:14px 16px;display:flex;align-items:center;gap:5px;background:none;border:none;border-bottom:3px solid transparent;transition:background .2s,border-color .2s;white-space:nowrap}
+.nav-item>a,.nav-item>button{color:#fff;font-size:.85rem;font-weight:600;padding:14px 14px;display:flex;align-items:center;gap:5px;background:none;border:none;border-bottom:3px solid transparent;transition:background .2s,border-color .2s;white-space:nowrap}
 .nav-item>a:hover,.nav-item>button:hover,.nav-item.open>a,.nav-item.open>button{background:rgba(255,255,255,.12);border-bottom-color:#fff}
 .nav-item>a.active{border-bottom-color:#00a300}
 .nav-arrow{font-size:10px;transition:transform .2s}
@@ -128,44 +131,48 @@ button{cursor:pointer;font-family:'Raleway',sans-serif}
 .dropdown li a:hover{background:#f0f4ff;color:#1351b4}
 .dropdown-group{padding:8px 0 4px;border-top:1px solid #eee}
 .dropdown-group-title{font-size:.72rem;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.7px;padding:4px 16px 2px}
-.nav-mobile-btn{display:none;background:none;border:none;color:#fff;font-size:24px;padding:10px}
 
 /* ── BREADCRUMB ── */
-.breadcrumb{background:#f8f8f8;border-bottom:1px solid #e0e0e0;padding:8px 1rem;font-size:.78rem}
-.breadcrumb-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:6px;color:#555}
+.breadcrumb{background:#f8f8f8;border-bottom:1px solid #e0e0e0}
+.breadcrumb .wrap{padding-top:8px;padding-bottom:8px;display:flex;align-items:center;gap:6px;font-size:.78rem;color:#555}
 .breadcrumb a{color:#1351b4}
 .breadcrumb a:hover{text-decoration:underline}
 .breadcrumb .sep{color:#999}
 
-/* ── HERO / BANNER ── */
-.hero{background:linear-gradient(135deg,#071d41 0%,#1351b4 60%,#00a300 100%);padding:3rem 1rem;color:#fff;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;right:-120px;top:-120px;width:480px;height:480px;border-radius:50%;background:rgba(255,255,255,.04)}
-.hero-inner{max-width:1200px;margin:0 auto;position:relative}
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,#071d41 0%,#1351b4 60%,#00a300 100%);color:#fff;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;right:-120px;top:-120px;width:480px;height:480px;border-radius:50%;background:rgba(255,255,255,.04);pointer-events:none}
+.hero .wrap{padding-top:3rem;padding-bottom:3rem;position:relative}
 .hero-tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:4px 12px;border-radius:2px;margin-bottom:1rem}
 .hero h1{font-size:2rem;font-weight:700;margin-bottom:.6rem;line-height:1.2}
 .hero p{font-size:1rem;opacity:.85;max-width:560px;line-height:1.7;margin-bottom:1.5rem}
 .hero-busca{display:flex;max-width:520px;border-radius:4px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.25)}
-.hero-busca input{flex:1;padding:14px 18px;border:none;font-size:1rem;font-family:'Raleway',sans-serif;outline:none}
-.hero-busca button{background:#00a300;color:#fff;border:none;padding:14px 22px;font-size:.9rem;font-weight:700;transition:background .2s}
+.hero-busca input{flex:1;min-width:0;padding:14px 18px;border:none;font-size:1rem;font-family:'Raleway',sans-serif;outline:none}
+.hero-busca button{background:#00a300;color:#fff;border:none;padding:14px 22px;font-size:.9rem;font-weight:700;white-space:nowrap}
 .hero-busca button:hover{background:#007a00}
 .hero-tags{margin-top:1rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .hero-tags span{font-size:.75rem;opacity:.7}
 .hero-tags a{font-size:.75rem;background:rgba(255,255,255,.15);color:#fff;padding:3px 10px;border-radius:100px;border:1px solid rgba(255,255,255,.25)}
 .hero-tags a:hover{background:rgba(255,255,255,.25)}
 
-/* ── DESTAQUES RÁPIDOS ── */
+/* ── DESTAQUES ── */
 .destaques{background:#fff;border-bottom:1px solid #e0e0e0}
-.destaques-inner{max-width:1200px;margin:0 auto;padding:0 1rem;display:flex}
-.destaque-item{flex:1;display:flex;align-items:center;gap:10px;padding:14px 16px;border-right:1px solid #eee;color:#1b1b1b;font-size:.83rem;font-weight:600;transition:background .2s}
+.destaques .wrap{padding-top:0;padding-bottom:0;display:flex}
+.destaque-item{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:14px 8px;border-right:1px solid #eee;color:#1b1b1b;font-size:.83rem;font-weight:600;transition:background .2s;text-align:center}
 .destaque-item:last-child{border-right:none}
 .destaque-item:hover{background:#f0f4ff;color:#1351b4}
 .destaque-item .icon{font-size:20px;flex-shrink:0}
 
+/* ── STATS BAR ── */
+.stats-bar{background:#e8f0fe;border-bottom:1px solid #c5d5f5}
+.stats-bar .wrap{padding-top:.6rem;padding-bottom:.6rem;display:flex;gap:2rem;flex-wrap:wrap;font-size:.8rem;color:#1351b4}
+.stats-bar strong{font-weight:700;font-size:.95rem}
+
 /* ── LAYOUT PRINCIPAL ── */
-.main-wrap{max-width:1200px;margin:1.5rem auto;padding:0 1rem;display:grid;grid-template-columns:260px 1fr;gap:1.5rem}
+.main-wrap{display:grid;grid-template-columns:240px 1fr;gap:1.5rem;padding-top:1.5rem;padding-bottom:1.5rem}
 
 /* ── SIDEBAR ── */
-.sidebar{display:flex;flex-direction:column;gap:1rem}
+.sidebar{display:flex;flex-direction:column;gap:1rem;min-width:0}
 .sidebar-box{background:#fff;border:1px solid #ddd;border-radius:2px;overflow:hidden}
 .sidebar-box-hd{background:#1351b4;color:#fff;padding:10px 14px;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
 .sidebar-box-hd.verde{background:#00a300}
@@ -180,30 +187,32 @@ button{cursor:pointer;font-family:'Raleway',sans-serif}
 .sidebar-filter input[type=range]{width:100%;accent-color:#1351b4;margin:4px 0}
 .sidebar-filter .range-row{padding:8px 14px;font-size:.8rem;color:#555}
 .sidebar-filter .range-row span{color:#1351b4;font-weight:700}
+.noticias-list a{color:#1351b4;font-weight:600;display:block;margin-bottom:2px}
+.noticias-list a:hover{text-decoration:underline}
+.noticias-list .data{font-size:.72rem;color:#888}
+.agenda-data{background:#1351b4;color:#fff;padding:4px 8px;border-radius:2px;text-align:center;min-width:44px;font-size:.72rem;font-weight:700;flex-shrink:0}
+.agenda-data .dia{font-size:1.1rem;display:block;line-height:1}
 
-/* ── AREA CONTEUDO ── */
-.content-area{}
+/* ── CONTEUDO ── */
 .content-toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:8px}
 .content-title{font-size:1.1rem;font-weight:700;color:#1b1b1b}
 .content-subtitle{font-size:.8rem;color:#666;margin-top:2px}
-.toolbar-right{display:flex;align-items:center;gap:8px}
-.btn-view{background:#fff;border:1px solid #ccc;padding:6px 10px;border-radius:2px;font-size:13px;color:#555;display:flex;align-items:center;gap:4px}
+.toolbar-right{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.btn-view{background:#fff;border:1px solid #ccc;padding:6px 10px;border-radius:2px;font-size:13px;color:#555}
 .btn-view.active{background:#1351b4;border-color:#1351b4;color:#fff}
-.btn-ordenar{background:#fff;border:1px solid #ccc;padding:6px 12px;border-radius:2px;font-size:.8rem;color:#333}
-.btn-cadastrar{background:#00a300;color:#fff;border:none;padding:8px 16px;border-radius:2px;font-size:.82rem;font-weight:700;display:flex;align-items:center;gap:6px}
+.btn-ordenar{background:#fff;border:1px solid #ccc;padding:6px 10px;border-radius:2px;font-size:.8rem;color:#333;font-family:'Raleway',sans-serif}
+.btn-cadastrar{background:#00a300;color:#fff;border:none;padding:8px 14px;border-radius:2px;font-size:.82rem;font-weight:700;white-space:nowrap}
 .btn-cadastrar:hover{background:#007a00}
-
-/* ── FILTROS CHIPS ── */
 .chips-bar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1rem}
 .chip{background:#fff;border:1.5px solid #ccc;padding:5px 14px;border-radius:100px;font-size:.78rem;color:#555;font-family:'Raleway',sans-serif;transition:all .2s}
 .chip:hover{border-color:#1351b4;color:#1351b4}
 .chip.active{background:#1351b4;border-color:#1351b4;color:#fff;font-weight:600}
 
 /* ── CARDS GRADE ── */
-.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
 .card{background:#fff;border:1px solid #ddd;border-radius:2px;overflow:hidden;transition:box-shadow .2s,transform .2s;display:flex;flex-direction:column}
 .card:hover{box-shadow:0 4px 18px rgba(0,0,0,.12);transform:translateY(-2px)}
-.card-thumb{height:130px;display:flex;align-items:center;justify-content:center;font-size:2.8rem;position:relative;flex-shrink:0}
+.card-thumb{height:120px;display:flex;align-items:center;justify-content:center;font-size:2.6rem;flex-shrink:0}
 .bg-cultura{background:linear-gradient(135deg,#e8eaf6,#9fa8da)}
 .bg-turismo{background:linear-gradient(135deg,#e8f5e9,#66bb6a)}
 .bg-gastronomia{background:linear-gradient(135deg,#fff3e0,#ffb74d)}
@@ -213,7 +222,7 @@ button{cursor:pointer;font-family:'Raleway',sans-serif}
 .card-body{padding:12px 14px;flex:1;display:flex;flex-direction:column}
 .card-cat{font-size:.68rem;text-transform:uppercase;letter-spacing:.8px;font-weight:700;margin-bottom:4px}
 .cat-cultura{color:#1351b4}.cat-turismo{color:#00a300}.cat-gastronomia{color:#e65100}.cat-entretenimento{color:#880e4f}
-.card-title{font-size:.92rem;font-weight:700;margin-bottom:6px;color:#1b1b1b;line-height:1.3}
+.card-title{font-size:.9rem;font-weight:700;margin-bottom:6px;color:#1b1b1b;line-height:1.3}
 .card-desc{font-size:.78rem;color:#555;line-height:1.6;margin-bottom:auto}
 .card-meta{margin-top:10px;padding-top:8px;border-top:1px solid #eee;display:flex;justify-content:space-between;align-items:center;font-size:.75rem;color:#666;flex-wrap:wrap;gap:4px}
 .card-local{display:flex;align-items:center;gap:3px}
@@ -221,7 +230,7 @@ button{cursor:pointer;font-family:'Raleway',sans-serif}
 .tag{font-size:.68rem;padding:2px 8px;border-radius:2px;font-weight:600}
 .tag-gratis{background:#e8f5e9;color:#1b5e20}
 .tag-pago{background:#fff3e0;color:#e65100}
-.card-actions{padding:8px 14px;border-top:1px solid #eee;display:flex;gap:6px}
+.card-actions{padding:8px 14px;border-top:1px solid #eee;display:flex;gap:6px;flex-wrap:wrap}
 .btn-sm{font-size:.75rem;padding:5px 10px;border-radius:2px;border:1px solid #ccc;background:#fff;color:#333;display:flex;align-items:center;gap:4px}
 .btn-sm:hover{background:#f0f0f0}
 .btn-sm.azul{background:#1351b4;color:#fff;border-color:#1351b4}
@@ -233,42 +242,33 @@ button{cursor:pointer;font-family:'Raleway',sans-serif}
 .cards-list{display:flex;flex-direction:column;gap:.8rem}
 .card-list-item{background:#fff;border:1px solid #ddd;border-radius:2px;display:flex;overflow:hidden;transition:box-shadow .2s}
 .card-list-item:hover{box-shadow:0 2px 12px rgba(0,0,0,.1)}
-.card-list-thumb{width:100px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:2.2rem}
+.card-list-thumb{width:90px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:2rem}
 .card-list-stripe{width:4px;flex-shrink:0}
-.card-list-body{flex:1;padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.card-list-info{flex:1}
+.card-list-body{flex:1;min-width:0;padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.card-list-info{flex:1;min-width:0}
 .card-list-actions{display:flex;gap:6px;flex-shrink:0}
 
 /* ── PAGINACAO ── */
-.paginacao{display:flex;align-items:center;justify-content:center;gap:4px;margin-top:1.5rem}
+.paginacao{display:flex;align-items:center;justify-content:center;gap:4px;margin-top:1.5rem;flex-wrap:wrap}
 .pag-btn{background:#fff;border:1px solid #ddd;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:.83rem;color:#1351b4;border-radius:2px;transition:background .2s}
 .pag-btn:hover{background:#f0f4ff}
 .pag-btn.active{background:#1351b4;color:#fff;border-color:#1351b4}
 .pag-btn.disabled{color:#ccc;pointer-events:none}
 
-/* ── SECOES EXTRAS ── */
-.section-extra{background:#fff;border:1px solid #ddd;border-radius:2px;padding:1.2rem;margin-top:1rem}
-.section-extra h3{font-size:.9rem;font-weight:700;color:#1351b4;margin-bottom:1rem;padding-bottom:6px;border-bottom:2px solid #e8f0fe}
-.noticias-list li{padding:8px 0;border-bottom:1px solid #f0f0f0;font-size:.83rem}
-.noticias-list li:last-child{border-bottom:none}
-.noticias-list a{color:#1351b4;font-weight:600;display:block;margin-bottom:2px}
-.noticias-list a:hover{text-decoration:underline}
-.noticias-list .data{font-size:.72rem;color:#888}
-.agenda-list li{padding:8px 0;border-bottom:1px solid #f0f0f0;font-size:.83rem;display:flex;gap:10px;align-items:flex-start}
-.agenda-list li:last-child{border-bottom:none}
-.agenda-data{background:#1351b4;color:#fff;padding:4px 8px;border-radius:2px;text-align:center;min-width:44px;font-size:.72rem;font-weight:700;flex-shrink:0}
-.agenda-data .dia{font-size:1.1rem;display:block;line-height:1}
+/* ── EMPTY ── */
+.empty-state{background:#fff;border:1px solid #ddd;padding:3rem;text-align:center;color:#888;grid-column:1/-1}
+.empty-state .big{font-size:3rem;margin-bottom:.5rem}
 
 /* ── MODAL ── */
-.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:900;display:none;align-items:flex-start;justify-content:center;padding:2rem 1rem;overflow-y:auto}
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:900;display:none;align-items:flex-start;justify-content:center;padding:1rem;overflow-y:auto}
 .modal-bg.open{display:flex}
 .modal{background:#fff;border-radius:2px;width:100%;max-width:600px;margin:auto;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.25)}
 .modal-hd{background:#1351b4;color:#fff;padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between}
 .modal-hd h2{font-size:1rem;font-weight:700}
 .modal-close{background:none;border:none;color:#fff;font-size:22px;line-height:1;padding:0 4px}
-.modal-body{padding:1.5rem}
+.modal-body{padding:1.2rem 1.5rem}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.form-group{margin-bottom:1rem}
+.form-group{margin-bottom:.9rem}
 .form-group label{display:block;font-size:.78rem;font-weight:700;color:#333;text-transform:uppercase;letter-spacing:.3px;margin-bottom:5px}
 .form-group input,.form-group select,.form-group textarea{width:100%;padding:9px 12px;border:1.5px solid #ccc;border-radius:2px;font-size:.9rem;font-family:'Raleway',sans-serif;color:#1b1b1b;outline:none;transition:border-color .2s}
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:#1351b4}
@@ -280,24 +280,23 @@ button{cursor:pointer;font-family:'Raleway',sans-serif}
 .btn-secondary{background:#fff;color:#333;border:1.5px solid #ccc;padding:10px 16px;border-radius:2px;font-size:.88rem;font-family:'Raleway',sans-serif}
 .btn-secondary:hover{background:#f0f0f0}
 .btn-danger{background:#c0392b;color:#fff;border:none;padding:10px 16px;border-radius:2px;font-size:.88rem;font-family:'Raleway',sans-serif}
-
-/* ── MODAL DETALHE ── */
-.detalhe-hero{height:180px;display:flex;align-items:center;justify-content:center;font-size:4rem}
+.detalhe-hero{height:160px;display:flex;align-items:center;justify-content:center;font-size:4rem}
 .detalhe-info{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin:1rem 0}
 .detalhe-row{font-size:.85rem;padding:6px 0;border-bottom:1px solid #f0f0f0}
 .detalhe-row strong{color:#555;font-size:.72rem;text-transform:uppercase;display:block;margin-bottom:2px}
+.confirm-box{background:#fff3cd;border:1px solid #ffc107;border-radius:2px;padding:1rem 1.2rem;margin-bottom:1rem;font-size:.88rem}
 
 /* ── FOOTER ── */
 .site-footer{background:#071d41;color:#fff;margin-top:2rem}
-.footer-top{max-width:1200px;margin:0 auto;padding:2rem 1rem;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+.footer-top{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;padding-top:2rem;padding-bottom:2rem}
 .footer-col h4{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:.8rem;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,.15)}
 .footer-col ul li{margin-bottom:5px}
 .footer-col ul li a{color:rgba(255,255,255,.75);font-size:.78rem;transition:color .2s}
 .footer-col ul li a:hover{color:#fff;text-decoration:underline}
-.footer-mid{background:#1351b4;padding:.8rem 1rem}
-.footer-mid-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
-.footer-mid-inner a{color:rgba(255,255,255,.85);font-size:.78rem}
-.footer-mid-inner a:hover{color:#fff;text-decoration:underline}
+.footer-mid{background:#1351b4}
+.footer-mid .wrap{padding-top:.8rem;padding-bottom:.8rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+.footer-mid .wrap a{color:rgba(255,255,255,.85);font-size:.78rem}
+.footer-mid .wrap a:hover{color:#fff;text-decoration:underline}
 .footer-bottom{background:#040f21;padding:.8rem 1rem;text-align:center;font-size:.75rem;color:rgba(255,255,255,.5)}
 
 /* ── TOAST ── */
@@ -306,32 +305,36 @@ button{cursor:pointer;font-family:'Raleway',sans-serif}
 .toast.erro{background:#c0392b}
 .toast.show{opacity:1}
 
-/* ── STATS BAR ── */
-.stats-bar{background:#e8f0fe;border-bottom:1px solid #c5d5f5;padding:.6rem 1rem}
-.stats-bar-inner{max-width:1200px;margin:0 auto;display:flex;gap:2rem;flex-wrap:wrap;font-size:.8rem;color:#1351b4}
-.stats-bar strong{font-weight:700;font-size:.95rem}
-
-/* ── CONFIRMACAO ── */
-.confirm-box{background:#fff3cd;border:1px solid #ffc107;border-radius:2px;padding:1rem 1.5rem;margin-bottom:1rem;font-size:.88rem}
-
-/* ── EMPTY ── */
-.empty-state{background:#fff;border:1px solid #ddd;padding:3rem;text-align:center;color:#888;grid-column:1/-1}
-.empty-state .big{font-size:3rem;margin-bottom:.5rem}
-
 /* ── RESPONSIVO ── */
-@media(max-width:900px){
+@media(max-width:1024px){
+  .main-wrap{grid-template-columns:200px 1fr}
+}
+@media(max-width:860px){
   .main-wrap{grid-template-columns:1fr}
   .sidebar{display:none}
   .footer-top{grid-template-columns:1fr 1fr}
   .detalhe-info{grid-template-columns:1fr}
+  .brand-text strong{font-size:.95rem}
 }
-@media(max-width:600px){
-  .hero h1{font-size:1.5rem}
+@media(max-width:640px){
+  .hero h1{font-size:1.4rem}
+  .hero p{font-size:.9rem}
   .destaques{display:none}
   .govbr-bar-links{display:none}
   .form-row{grid-template-columns:1fr}
   .footer-top{grid-template-columns:1fr}
   .header-search{display:none}
+  .brand-text span{display:none}
+  .cards-grid{grid-template-columns:1fr}
+  .card-list-body{flex-direction:column;align-items:flex-start}
+  .card-list-actions{width:100%}
+  .toolbar-right{gap:4px}
+  .btn-view span{display:none}
+}
+@media(max-width:420px){
+  .hero h1{font-size:1.2rem}
+  .hero-busca button{padding:14px 12px;font-size:.8rem}
+  .nav-item>a,.nav-item>button{padding:12px 8px;font-size:.78rem}
 }
 </style>
 </head>
@@ -345,7 +348,7 @@ button{cursor:pointer;font-family:'Raleway',sans-serif}
 
 <!-- BARRA GOV -->
 <div class="govbr-bar" role="banner">
-  <div class="govbr-bar-inner">
+  <div class="wrap">
     <div class="govbr-logo">
       <span class="govbr-badge">GOV.BR</span>
       <span style="color:rgba(255,255,255,.7);font-size:12px;margin-left:4px">Prefeitura Municipal de Bauru</span>
@@ -361,7 +364,7 @@ button{cursor:pointer;font-family:'Raleway',sans-serif}
 
 <!-- HEADER -->
 <header class="site-header">
-  <div class="site-header-inner">
+  <div class="wrap">
     <div class="brand">
       <div class="brand-icon">🏛️</div>
       <div class="brand-text">
@@ -381,10 +384,8 @@ button{cursor:pointer;font-family:'Raleway',sans-serif}
 
 <!-- NAVBAR -->
 <nav class="navbar" id="nav-principal" role="navigation" aria-label="Menu principal">
-  <div class="navbar-inner">
-    <div class="nav-item">
-      <a href="#" class="active">Página Inicial</a>
-    </div>
+  <div class="wrap">
+    <div class="nav-item"><a href="#" class="active">Página Inicial</a></div>
     <div class="nav-item" id="nav-servicos">
       <button onclick="toggleNav('nav-servicos')">Serviços <span class="nav-arrow">▾</span></button>
       <ul class="dropdown">
@@ -434,15 +435,13 @@ button{cursor:pointer;font-family:'Raleway',sans-serif}
         <li><a href="#">Conselho Municipal de Cultura</a></li>
       </ul>
     </div>
-    <div class="nav-item">
-      <a href="#">Contato</a>
-    </div>
+    <div class="nav-item"><a href="#">Contato</a></div>
   </div>
 </nav>
 
 <!-- BREADCRUMB -->
 <div class="breadcrumb">
-  <div class="breadcrumb-inner">
+  <div class="wrap">
     <a href="#">Início</a><span class="sep">›</span>
     <span id="bc-current">Catálogo de Serviços</span>
   </div>
@@ -450,7 +449,7 @@ button{cursor:pointer;font-family:'Raleway',sans-serif}
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-inner">
+  <div class="wrap">
     <div class="hero-tag">Portal Oficial</div>
     <h1>Cultura e Turismo em Bauru</h1>
     <p>Encontre serviços culturais, pontos turísticos, gastronomia e entretenimento. Cadastre e divulgue seu espaço.</p>
@@ -471,7 +470,7 @@ button{cursor:pointer;font-family:'Raleway',sans-serif}
 
 <!-- DESTAQUES -->
 <div class="destaques">
-  <div class="destaques-inner">
+  <div class="wrap">
     <a href="#" class="destaque-item" onclick="setFiltro('cultura');return false"><span class="icon">🎭</span> Cultura</a>
     <a href="#" class="destaque-item" onclick="setFiltro('turismo');return false"><span class="icon">🏛️</span> Turismo</a>
     <a href="#" class="destaque-item" onclick="setFiltro('gastronomia');return false"><span class="icon">🍽️</span> Gastronomia</a>
@@ -482,23 +481,21 @@ button{cursor:pointer;font-family:'Raleway',sans-serif}
 
 <!-- STATS BAR -->
 <div class="stats-bar">
-  <div class="stats-bar-inner" id="stats-bar"></div>
+  <div class="wrap" id="stats-bar"></div>
 </div>
 
 <!-- MAIN -->
-<div class="main-wrap" id="conteudo">
+<div class="wrap main-wrap" id="conteudo">
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
-
     <div class="sidebar-box">
       <div class="sidebar-box-hd">Categorias</div>
       <ul class="sidebar-nav" id="sidebar-cats"></ul>
     </div>
-
     <div class="sidebar-box">
       <div class="sidebar-box-hd verde">Filtros</div>
-      <div class="sidebar-filter" id="sidebar-filtros">
+      <div class="sidebar-filter">
         <div style="padding:8px 14px;font-size:.75rem;font-weight:700;color:#555;text-transform:uppercase;border-bottom:1px solid #f0f0f0">Gratuidade</div>
         <label><input type="checkbox" id="f-gratis" onchange="renderCards()"> Somente gratuitos</label>
         <div style="padding:8px 14px;font-size:.75rem;font-weight:700;color:#555;text-transform:uppercase;border-bottom:1px solid #f0f0f0;border-top:1px solid #f0f0f0">Avaliação mínima</div>
@@ -508,7 +505,6 @@ button{cursor:pointer;font-family:'Raleway',sans-serif}
         </div>
       </div>
     </div>
-
     <div class="sidebar-box">
       <div class="sidebar-box-hd">Informações Úteis</div>
       <ul class="sidebar-nav">
@@ -520,56 +516,43 @@ button{cursor:pointer;font-family:'Raleway',sans-serif}
         <li><a href="#">📰 Legislação</a></li>
       </ul>
     </div>
-
     <div class="sidebar-box">
       <div class="sidebar-box-hd verde">Últimas Notícias</div>
       <ul class="noticias-list" style="padding:0 0 4px">
-        <li style="padding:10px 14px">
-          <a href="#">Festival de Inverno 2026 abre inscrições</a>
-          <span class="data">27/05/2026</span>
-        </li>
-        <li style="padding:10px 14px;border-top:1px solid #f0f0f0">
-          <a href="#">Museu recebe exposição nacional em junho</a>
-          <span class="data">25/05/2026</span>
-        </li>
-        <li style="padding:10px 14px;border-top:1px solid #f0f0f0">
-          <a href="#">Bauru entre os 10 destinos mais visitados do interior</a>
-          <span class="data">20/05/2026</span>
-        </li>
+        <li style="padding:10px 14px"><a href="#">Festival de Inverno 2026 abre inscrições</a><span class="data">27/05/2026</span></li>
+        <li style="padding:10px 14px;border-top:1px solid #f0f0f0"><a href="#">Museu recebe exposição nacional em junho</a><span class="data">25/05/2026</span></li>
+        <li style="padding:10px 14px;border-top:1px solid #f0f0f0"><a href="#">Bauru entre os 10 destinos mais visitados</a><span class="data">20/05/2026</span></li>
       </ul>
     </div>
-
     <div class="sidebar-box">
       <div class="sidebar-box-hd">Agenda de Eventos</div>
-      <ul class="agenda-list" style="padding:4px 0">
-        <li style="padding:8px 14px">
+      <ul style="padding:4px 0">
+        <li style="padding:8px 14px;display:flex;gap:10px;align-items:flex-start">
           <div class="agenda-data"><span class="dia">15</span>JUN</div>
           <div><div style="font-size:.82rem;font-weight:600">Feira de Artesanato</div><div style="font-size:.72rem;color:#888">Praça das Cerejeiras</div></div>
         </li>
-        <li style="padding:8px 14px;border-top:1px solid #f0f0f0">
+        <li style="padding:8px 14px;display:flex;gap:10px;align-items:flex-start;border-top:1px solid #f0f0f0">
           <div class="agenda-data"><span class="dia">22</span>JUN</div>
           <div><div style="font-size:.82rem;font-weight:600">Festival de Música</div><div style="font-size:.72rem;color:#888">Parque Vitória Régia</div></div>
         </li>
-        <li style="padding:8px 14px;border-top:1px solid #f0f0f0">
+        <li style="padding:8px 14px;display:flex;gap:10px;align-items:flex-start;border-top:1px solid #f0f0f0">
           <div class="agenda-data"><span class="dia">05</span>JUL</div>
           <div><div style="font-size:.82rem;font-weight:600">Semana do Turismo</div><div style="font-size:.72rem;color:#888">Centro de Convenções</div></div>
         </li>
       </ul>
     </div>
-
   </aside>
 
   <!-- CONTEUDO PRINCIPAL -->
   <main>
-
     <div class="content-toolbar">
       <div>
         <div class="content-title" id="content-title">Catálogo de Serviços</div>
         <div class="content-subtitle" id="content-subtitle"></div>
       </div>
       <div class="toolbar-right">
-        <button class="btn-view active" id="btn-grade" onclick="setView('grade')" title="Grade">⊞ Grade</button>
-        <button class="btn-view" id="btn-lista" onclick="setView('lista')" title="Lista">☰ Lista</button>
+        <button class="btn-view active" id="btn-grade" onclick="setView('grade')">⊞ <span>Grade</span></button>
+        <button class="btn-view" id="btn-lista" onclick="setView('lista')">☰ <span>Lista</span></button>
         <select class="btn-ordenar" onchange="setOrdem(this.value)">
           <option value="recente">Mais recentes</option>
           <option value="az">A → Z</option>
@@ -578,7 +561,6 @@ button{cursor:pointer;font-family:'Raleway',sans-serif}
         <button class="btn-cadastrar" onclick="abrirModal()">+ Cadastrar</button>
       </div>
     </div>
-
     <div class="chips-bar">
       <button class="chip active" onclick="setFiltro('todos',this)">Todos</button>
       <button class="chip" onclick="setFiltro('cultura',this)">🎭 Cultura</button>
@@ -586,19 +568,16 @@ button{cursor:pointer;font-family:'Raleway',sans-serif}
       <button class="chip" onclick="setFiltro('gastronomia',this)">🍽️ Gastronomia</button>
       <button class="chip" onclick="setFiltro('entretenimento',this)">🎵 Entretenimento</button>
     </div>
-
     <div id="cards-container">
       <div class="cards-grid"><div class="empty-state"><div class="big">⏳</div>Carregando serviços...</div></div>
     </div>
-
     <div class="paginacao" id="paginacao"></div>
-
   </main>
 </div>
 
 <!-- FOOTER -->
 <footer class="site-footer" id="rodape">
-  <div class="footer-top">
+  <div class="wrap footer-top">
     <div class="footer-col">
       <h4>Secretaria de Cultura e Turismo</h4>
       <ul>
@@ -641,7 +620,7 @@ button{cursor:pointer;font-family:'Raleway',sans-serif}
     </div>
   </div>
   <div class="footer-mid">
-    <div class="footer-mid-inner">
+    <div class="wrap">
       <div style="display:flex;gap:1.5rem;flex-wrap:wrap">
         <a href="#">Mapa do Site</a>
         <a href="#">Acessibilidade</a>
@@ -651,9 +630,7 @@ button{cursor:pointer;font-family:'Raleway',sans-serif}
       <div style="font-size:.75rem;color:rgba(255,255,255,.7)">Versão 2.0 — 2026</div>
     </div>
   </div>
-  <div class="footer-bottom">
-    © 2026 Prefeitura Municipal de Bauru — Secretaria de Cultura e Turismo — Todos os direitos reservados
-  </div>
+  <div class="footer-bottom">© 2026 Prefeitura Municipal de Bauru — Secretaria de Cultura e Turismo — Todos os direitos reservados</div>
 </footer>
 
 <!-- MODAL CADASTRO/EDITAR -->
@@ -696,7 +673,7 @@ button{cursor:pointer;font-family:'Raleway',sans-serif}
         </div>
         <div class="form-group">
           <label>Avaliação (1 a 5)</label>
-          <input id="f-nota" type="number" min="1" max="5" step="0.1" placeholder="Ex: 4.5">
+          <input id="f-nota-form" type="number" min="1" max="5" step="0.1" placeholder="Ex: 4.5">
         </div>
       </div>
       <div class="form-row">
@@ -812,12 +789,10 @@ function renderCards(){
     document.getElementById('paginacao').innerHTML='';return;
   }
   const gratis=p=>(p||'').toLowerCase().includes('gratu')||p==='0'||p==='R$ 0,00';
-  if(viewMode==='grade'){
-    cont.innerHTML=`<div class="cards-grid">${slice.map(s=>cardGrade(s,gratis)).join('')}</div>`;
-  } else {
-    cont.innerHTML=`<div class="cards-list">${slice.map(s=>cardLista(s,gratis)).join('')}</div>`;
-  }
-  renderPaginacao(totalPag,data.length);
+  cont.innerHTML=viewMode==='grade'
+    ?`<div class="cards-grid">${slice.map(s=>cardGrade(s,gratis)).join('')}</div>`
+    :`<div class="cards-list">${slice.map(s=>cardLista(s,gratis)).join('')}</div>`;
+  renderPaginacao(totalPag);
 }
 
 function cardGrade(s,gratis){
@@ -850,7 +825,7 @@ function cardLista(s,gratis){
       <div class="card-list-info">
         <div class="card-cat cat-${s.categoria}" style="margin-bottom:2px">${CATS[s.categoria]}</div>
         <div class="card-title" style="margin-bottom:4px">${s.nome}</div>
-        <div style="font-size:.78rem;color:#555">${(s.descricao||'').slice(0,80)}…</div>
+        <div style="font-size:.78rem;color:#555">${(s.descricao||'').slice(0,100)}…</div>
         <div class="card-meta" style="margin-top:6px;padding-top:0;border-top:none">
           <span class="card-local">📍 ${s.cidade}</span>
           <span class="${gratis(s.preco)?'tag tag-gratis':'tag tag-pago'}">${gratis(s.preco)?'Gratuito':s.preco}</span>
@@ -866,13 +841,10 @@ function cardLista(s,gratis){
   </div>`;
 }
 
-function renderPaginacao(total,count){
+function renderPaginacao(total){
   if(total<=1){document.getElementById('paginacao').innerHTML='';return;}
-  let html='';
-  html+=`<button class="pag-btn ${pagAtual===1?'disabled':''}" onclick="irPag(${pagAtual-1})">‹</button>`;
-  for(let i=1;i<=total;i++){
-    html+=`<button class="pag-btn ${i===pagAtual?'active':''}" onclick="irPag(${i})">${i}</button>`;
-  }
+  let html=`<button class="pag-btn ${pagAtual===1?'disabled':''}" onclick="irPag(${pagAtual-1})">‹</button>`;
+  for(let i=1;i<=total;i++) html+=`<button class="pag-btn ${i===pagAtual?'active':''}" onclick="irPag(${i})">${i}</button>`;
   html+=`<button class="pag-btn ${pagAtual===total?'disabled':''}" onclick="irPag(${pagAtual+1})">›</button>`;
   document.getElementById('paginacao').innerHTML=html;
 }
@@ -883,11 +855,9 @@ function setFiltro(f,el){
   filtroAtivo=f;pagAtual=1;
   document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
   if(el)el.classList.add('active');
-  else{
-    document.querySelectorAll('.chip').forEach(c=>{
-      if((f==='todos'&&c.textContent.trim()==='Todos')||c.textContent.toLowerCase().includes(CATS[f]||''))c.classList.add('active');
-    });
-  }
+  else document.querySelectorAll('.chip').forEach(c=>{
+    if((f==='todos'&&c.textContent.trim()==='Todos')||c.textContent.toLowerCase().includes((CATS[f]||'').toLowerCase()))c.classList.add('active');
+  });
   renderSidebar();renderCards();
   window.scrollTo(0,400);
 }
@@ -917,7 +887,7 @@ function verDetalhe(id){
   document.getElementById('detalhe-body').innerHTML=`
     <div class="detalhe-hero bg-${s.categoria}">${EMOJIS[s.categoria]}</div>
     <div class="modal-body">
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap">
         <span class="cat-${s.categoria}" style="font-size:.72rem;font-weight:700;text-transform:uppercase">${CATS[s.categoria]}</span>
         <span class="${gratis?'tag tag-gratis':'tag tag-pago'}">${gratis?'Gratuito':s.preco}</span>
         <span style="color:#00a300;font-weight:700;margin-left:auto">${parseFloat(s.avaliacao).toFixed(1)} ★</span>
@@ -948,13 +918,11 @@ function abrirModal(s){
   document.getElementById('f-preco').value=s?s.preco:'';
   document.getElementById('f-horario').value=s?s.horario:'';
   document.getElementById('f-contato').value=s?s.contato:'';
-  document.getElementById('f-nota').value=s?s.avaliacao:'';
+  document.getElementById('f-nota-form').value=s?s.avaliacao:'';
   document.getElementById('modal-form').classList.add('open');
 }
 
-function editarServico(id){
-  const s=db.find(x=>x.id===id);if(s)abrirModal(s);
-}
+function editarServico(id){const s=db.find(x=>x.id===id);if(s)abrirModal(s)}
 
 function pedirExcluir(id,nome){
   excluirId=id;
@@ -984,7 +952,7 @@ async function salvar(){
     preco:document.getElementById('f-preco').value||'Consulte',
     horario:document.getElementById('f-horario').value||'A confirmar',
     contato:document.getElementById('f-contato').value||'—',
-    avaliacao:parseFloat(document.getElementById('f-nota').value)||4.0
+    avaliacao:parseFloat(document.getElementById('f-nota-form').value)||4.0
   };
   const id=document.getElementById('f-id').value;
   if(id){
