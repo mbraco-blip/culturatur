@@ -163,6 +163,7 @@ textarea{min-height:70px;resize:vertical}
 <div class="toast" id="toast"></div>
 
 <script>
+{% raw %}
 const EMOJIS={cultura:'🎭',turismo:'🏛️',gastronomia:'🍽️',entretenimento:'🎵'};
 const CATS={cultura:'Cultura',turismo:'Turismo',gastronomia:'Gastronomia',entretenimento:'Entretenimento'};
 let db=[], filtro='todos';
@@ -238,6 +239,7 @@ function toast(msg){
 
 document.getElementById('modal').addEventListener('click',e=>{if(e.target===document.getElementById('modal'))fecharModal()});
 carregar();
+{% endraw %}
 </script>
 </body>
 </html>'''
